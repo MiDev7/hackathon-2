@@ -1,0 +1,25 @@
+
+{%load static%}
+<nav class="Navbar">
+    <div class="Logo">
+        <img src="{% static 'pictures\Garage Sale-02.png' %}" alt="navbar-logo " class="ImageLogo">
+    </div>
+    <div>
+        <ul class="NavList">
+            <li class="NavItem"><a href="/">HOME</a></li>
+            <li class="NavItem shop" onclick="nav_dropdown()"><a href="shop/">SHOP</a>
+                <ul id="Dropdown_menu">
+                    <li>Clothing</li>
+                    <li>Mechanics</li>
+                    <li>Education</li>
+                </ul>
+            </li>
+            <li class="NavItem"><a>ABOUT US</a></li>
+            <li class="NavItem"><a>CONTACT US</a></li>
+        </ul>
+    </div>
+    <div class="NavAction">
+        <span><a>LOGIN</a></span>
+        <span class="Signup-btn"><a href="signup">SIGN UP</a></span>
+    </div>
+</nav>

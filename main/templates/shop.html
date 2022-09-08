@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block shop %}
+<div class="card-container">
+    {% for product in products %}
+    <div class="card">
+        <div class="card-header">
+          <img src="/{{product.image}}" alt="rover" />
+        </div>
+        <div class="card-body">
+            <h4>
+                {{product.name}}
+            </h4>
+            <p>
+                MUR {{product.price}}
+            </p>
+            <button class="buy_btn" type="submit">
+                <span><i class="fa-solid fa-cart-shopping"></i></span>
+                <span><a href="/cart/add_product?product_id={{product.id}}&qty=1"><p>BUY</p></a></span>
+            </button>
+            </div>
+        </div>
+        {% endfor%}
+    </div>
+    
+</div>
+
+{% endblock %}
