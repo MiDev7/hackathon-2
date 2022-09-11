@@ -27,13 +27,13 @@
 
 </nav> -->
 <nav class="navbar navbar-expand-lg bg-light p-0">
-    <div class="container-fluid d-flex justify-content-between w-100 align-item-center">
-        <a class="navbar-brand" href="#"><img src="{% static 'pictures\Garage Sale-02.png' %}" width="100" alt="navbar-logo " class="ImageLogo"></a>
+    <div class="container-fluid d-flex flex-row justify-content-between">
+        <a class="navbar-brand" href="#"><img src="{% static 'pictures\Garage Sale-02.png' %}" width="125" alt="navbar-logo " class="ImageLogo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex justify-content-between align-item-center">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item NavItem">
                     <a class="nav-link active" aria-current="page" href="/">HOME</a>
                 </li>
@@ -66,13 +66,20 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
             </form> -->
-            <div class="NavAction">
+            <div class="NavAction d-flex">
                 <span><a>LOGIN</a></span>
                 <span ><a href="../signup/" class="signup">SIGN UP</a></span>
             </div>
-            <div>
-                <a href="../cart/"><i class="fa-solid fa-cart-shopping cart_btn"></i></a>
-            </div>
+            
+        </div>
+        <div>
+            <a href="../cart/" class="position-relative">
+                <i class="fa-solid fa-cart-shopping cart_btn"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger w-1">
+                    {{cartItems}}
+                    <span class="visually-hidden">unread messages</span>
+                </span>
+            </a>
         </div>
     </div>
 </nav>

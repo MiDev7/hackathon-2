@@ -87,6 +87,8 @@
 
 .cart_btn {
     color: #7EA955;
+    font-size: 18px;
+    padding-left: 15px ;
 }
 
 /* .Signup-btn:hover{
@@ -223,3 +225,20 @@ object-fit: cover;
 
 }
 
+.chg-quantity{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 3px;
+    margin-left: 2px;
+    margin-right: 10px;
+	transition:.1s;
+}
+
+
+.quantity {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+}

@@ -25,8 +25,16 @@
                 <img src="{{item.product.imageURL}}" alt="" class="itemImg" />
                 <p class="itemNumber">#QUE-007544-002</p>
                 <h3>{{item.product.name}}</h3>
-        
-                <p> <input type="text"  class="qty" placeholder="{{item.quantity}}"/> x MUR {{item.product.price}}</p>
+                <div class="quantity">
+                    <input type="text"  class="qty" placeholder="{{item.quantity}}"/> 
+                    <div>
+                      <img  data-product={{item.product.id}} data-action="add" src="{% static 'image\3+arrow-up.png' %}" alt="" class="chg-quantity">
+                      <img src="{% static 'image\2+arrow-down.png' %}" alt="" class="chg-quantity" data-product={{item.product.id}} data-action="remove">
+                    </div>
+                    
+                    <p> x MUR {{item.product.price}}</p>
+                </div>
+              
         
                 <p class="stockStatus"> In Stock</p>
             </div>  
@@ -54,4 +62,6 @@
       </ul>
     </div>
   </div>
+
+  <script src="{% static 'js\cart.js' %}"></script>
 {% endblock %}

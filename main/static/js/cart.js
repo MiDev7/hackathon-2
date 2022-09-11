@@ -1,4 +1,4 @@
-let updateBtn = document.querySelectorAll('.buy_btn')
+let updateBtn = document.querySelectorAll('.chg-quantity')
 
 for(let i = 0 ; i < updateBtn.length; i++){
     updateBtn[i].addEventListener('click',function() {
