@@ -9,12 +9,6 @@ function nav_dropdown() {
     }
 }
 
-window.onclick = function (event) {
-    if (!event.target.matches('.shop')) {
-        document.querySelector('#Dropdown_menu').style.display = "none";
-    }
-} 
-
 // Cart Function to remove item
 $('a.remove').click(function(){
     event.preventDefault();

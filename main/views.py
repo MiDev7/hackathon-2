@@ -115,3 +115,8 @@ def checkout(request):
     context = {'items' : items,'order' : order, 'cartItems' : cartItems}
 
     return render(request,'checkout.html',context)
+
+
+def processOrder(request):
+    print('Data:', request.body)
+    return JsonResponse('Payment complete!' , safe=False)
