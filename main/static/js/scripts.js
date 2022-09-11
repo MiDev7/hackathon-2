@@ -15,4 +15,10 @@ window.onclick = function (event) {
     }
 } 
 
-
+// Cart Function to remove item
+$('a.remove').click(function(){
+    event.preventDefault();
+    $( this ).parent().parent().parent().hide( 400 );
+   
+})
+  

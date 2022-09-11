@@ -7,6 +7,7 @@
       <h1>My Cart</h1>
       <a href="#" class="continue">Continue Shopping</a>
     </div>
+    
     <div class="cart">
   <!--    <ul class="tableHead">
         <li class="prodHeader">Product</li>
@@ -14,29 +15,42 @@
         <li>Total</li>
          <li>Remove</li>
       </ul>-->
+      
       <ul class="cartWrap">
+        {% for item in items %}
         <li class="items odd">
           
         <div class="infoWrap"> 
             <div class="cartSection">
-                <img src="http://lorempixel.com/output/technics-q-c-300-300-4.jpg" alt="" class="itemImg" />
+                <img src="{{item.product.imageURL}}" alt="" class="itemImg" />
                 <p class="itemNumber">#QUE-007544-002</p>
-                <h3>Item Name 1</h3>
+                <h3>{{item.product.name}}</h3>
         
-                <p> <input type="text"  class="qty" placeholder="3"/> x $5.00</p>
+                <p> <input type="text"  class="qty" placeholder="{{item.quantity}}"/> x MUR {{item.product.price}}</p>
         
                 <p class="stockStatus"> In Stock</p>
             </div>  
       
           
             <div class="prodTotal cartSection">
-                    <p>$15.00</p>
+                    <p>MUR {{item.get_total}}</p>
             </div>
             <div class="cartSection removeWrap">
                 <a href="#" class="remove">x</a>
             </div>
         </div>
         </li>
+        {% endfor %}
+      </ul>
+     
+    </div>
+    <div class="subtotal cf">
+      <ul>
+        <!-- <li class="totalRow"><span class="label">Subtotal</span><span class="value">$35.00</span></li>
+  
+        <li class="totalRow"><span class="label">Tax</span><span class="value">$4.00</span></li> -->
+        <li class="totalRow final"><span class="label">Total</span><span class="value">MUR {{order.get_cart_total}} </span></li>
+        <li class="totalRow"><a href="#" class="btn continue">Checkout</a></li>
       </ul>
     </div>
   </div>

@@ -1,4 +1,5 @@
 from contextlib import redirect_stderr
+from sqlite3 import complete_statement
 from unicodedata import name
 from django.shortcuts import render,redirect
 from .forms import *
@@ -23,7 +24,7 @@ def signup(request):
             # get the value of the fields
            # create internal user 
             users = User.objects.create_user(
-                username=request.POST['username'], 
+                user=request.POST['username'], 
                 email=request.POST['email'], 
                 password=request.POST['password'])
             Customers(
@@ -36,8 +37,23 @@ def signup(request):
         return render(request, 'signup.html',{'form':user()})
 
 def cart(request):
-    return render(request, 'cart.html',{})
+
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created =  Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+    
+    else: 
+        items = []
+        order = {'get_cart_total':0,'get_cart_item':0}
+    context = {'items' : items,'order' : order}
+
+
+    return render(request, 'cart.html',context)
 
 def updateCart(request):
    
     return JsonResponse('Item was added',safe=False)
+
+def checkout(request):
+    return render(request,'checkout.html',{})
