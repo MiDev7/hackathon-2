@@ -164,7 +164,6 @@ object-fit: cover;
 
 .buy_btn {
     background-color: #7EA955;
-    opacity: 0.5;
     width: 10rem;
     min-height: 2.8rem;
     display: flex;
@@ -242,3 +241,6 @@ object-fit: cover;
     justify-content: flex-start;
     align-items: baseline;
 }
+
+/* Hero Banner */
+

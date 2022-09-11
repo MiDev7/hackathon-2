@@ -21,7 +21,7 @@ def main(request):
         order = {'get_cart_total':0,'get_cart_item':0}
         cartItems = order['ger_cart_item']
 
-    context = {'cartItems' : cartItems}
+    context = {'cartItems' : cartItems, 'customer': customer,}
     return render(request, 'index.html',context)
 
 
@@ -39,6 +39,19 @@ def shop(request):
     context = {'products': Products.objects.all(),'cartItems' : cartItems}
     return render(request, 'shop.html', context)
 
+def home(request):
+    if request.user.is_authenticated:
+        customer = request.user.customer
+        order, created =  Order.objects.get_or_create(customer=customer, complete=False)
+        items = order.orderitem_set.all()
+        cartItems = order.get_cart_items
+    else: 
+        items = []
+        order = {'get_cart_total':0,'get_cart_item':0}
+        cartItems = order['ger_cart_item']
+
+    context = {'cartItems' : cartItems, 'customer': customer,}
+    return render(request, 'home.html', context)
 
 def signup(request):
     if request.method == 'POST':

@@ -5,12 +5,13 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('', views.main, name='home'),
+    path('', views.home, name='home'),
     path('shop/', views.shop, name='shop'),
     path('signup/',views.signup, name='signup'),
     path('cart/',views.cart,name='cart'),
     path('updateCart/',views.updateCart, name="update_cart"),
     path('checkout/',views.checkout, name="update_cart"),
-    path('process_order/',views.processOrder, name="processOrder")
+    path('process_order/',views.processOrder, name="processOrder"),
+    path('home/', views.home, name='home'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
