@@ -38,7 +38,7 @@
     transition: 0.5s ease;
 }
 .NavItem > a{
-    color: #7EA955;
+    color: #7EA955 !important;
 }
  
 .NavItem > a:hover {
@@ -73,27 +73,28 @@
 
 
 
-.NavAction {
-    color: #7EA955;
-    font: 20px;
-}
 
-.Signup-btn {
+.signup {
     background-color: #7EA955;
     color: #F2F2F2;
-    border: 2px solid #7EA955; 
+    border: 2px solid #7EA955 ; 
+    text-decoration: none;
     padding: 3px 10px;
     margin-left: 7px;
     border-radius: 50px 0px 50px 0px;
     transition: 0.7s ease-in-out;
 }
 
-.Signup-btn:hover{
-    background-color: #42741F;
-    border: 2px solid #42741F;
+.cart_btn {
+    color: #7EA955;
 }
 
-.container {
+/* .Signup-btn:hover{
+    background-color: #42741F;
+    border: 2px solid #42741F;
+} */
+
+/* .container {
     text-align: center;
     padding: 1rem;
     display: flex;
@@ -101,13 +102,13 @@
     justify-content: center;
     align-items: center;
     color: #42741F;
-}
+} */
 
-.container > form {
+/* .container > form {
     background-color: #F2F2F2;
     padding: 2rem;
     border-radius: 50px 0px 50px 0px;
-}
+} */
 
 
 td {
@@ -182,3 +183,23 @@ object-fit: cover;
     color: #F2F2F2;
 }
 
+.hidden {
+    display: none!important;
+}
+
+.box-element{
+	box-shadow:hsl(0, 0%, 80%) 0 0 16px;
+	background-color: #fff;
+	border-radius: 4px;
+	padding: 10px;
+}
+
+.col-lg-4, .col-lg-6, .col-lg-8, .col-lg-12{
+	margin-top: 10px;
+}
+
+.form-field{
+	width:250px;
+	display: inline-block;
+	padding: 5px;
+}
