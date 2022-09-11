@@ -161,17 +161,20 @@ object-fit: cover;
 
 .buy_btn {
     background-color: #7EA955;
+    opacity: 0.5;
     width: 10rem;
     min-height: 2.8rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: none;
+    cursor: pointer;
     color: #F2F2F2;
     border-radius: 50px 0px 50px 0px;
     font-size: 18px;
 }
+
+
 
 .buy_btn p {
     margin: 0 0 0 15px;

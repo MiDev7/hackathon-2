@@ -1,7 +1,10 @@
 from contextlib import redirect_stderr
+from unicodedata import name
 from django.shortcuts import render,redirect
 from .forms import *
 from .models import *
+from django.http import JsonResponse
+import json 
 
 
 # Create your views here.
@@ -32,4 +35,9 @@ def signup(request):
     else:    
         return render(request, 'signup.html',{'form':user()})
 
+def cart(request):
+    return render(request, 'cart.html',{})
 
+def updateCart(request):
+   
+    return JsonResponse('Item was added',safe=False)
