@@ -59,7 +59,7 @@
     margin: auto;
     padding: 1.0rem;
     width: auto;
-    border-top:1px solid #42741f48;
+    border-top:1px solid #42741f;
     color: #7EA955;
     display: block;
 }
@@ -68,6 +68,8 @@
     color: #42741f48;
 
 }
+
+
 
 
 
@@ -162,19 +164,7 @@ object-fit: cover;
     font-size: 26px;
 }
 
-.buy_btn {
-    background-color: #7EA955;
-    width: 10rem;
-    min-height: 2.8rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    color: #F2F2F2;
-    border-radius: 50px 0px 50px 0px;
-    font-size: 18px;
-}
+
 
 
 

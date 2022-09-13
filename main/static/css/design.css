@@ -54,6 +54,16 @@
     color: #F2F2F2;
     background-color: #7EA955;
 }
+.linkBuy {
+    color:#7EA955 ; 
+    text-decoration:none;
+}
+.linkBuy:hover {
+    cursor: pointer;
+    color: #F2F2F2;
+    background-color: #7EA955;
+}
+
 
 /* Footer Design */
 .footer-clean {
@@ -166,4 +176,9 @@
     color: #F2F2F2;
     font-size: 75px;
     max-height: 90rem;
+}
+
+.form-register {
+    background-color: #7EA955;
+    color: #F2F2F2;
 }

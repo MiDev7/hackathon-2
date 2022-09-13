@@ -1,13 +1,12 @@
 from contextlib import redirect_stderr
 from math import prod
-from sqlite3 import complete_statement
-from unicodedata import name
 from django.shortcuts import render,redirect
 from .forms import *
 from .models import *
 from django.http import JsonResponse
 import json 
-
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 
 # Create your views here.
 def main(request):
@@ -54,23 +53,37 @@ def home(request):
     return render(request, 'home.html', context)
 
 def signup(request):
+    form = CreateUserForm()
+
     if request.method == 'POST':
-        form = user(request.POST)
+        form = CreateUserForm(request.POST)
         if form.is_valid():
-            # get the value of the fields
-           # create internal user 
-            users = User.objects.create_user(
-                user=request.POST['username'], 
-                email=request.POST['email'], 
-                password=request.POST['password'])
-            Customers(
-                username=users,
-                first_name=request.POST['first_name'],
-                last_name=request.POST['last_name']
-            ).save()
-            return redirect('/')
-    else:    
-        return render(request, 'signup.html',{'form':user()})
+            form.save()
+            users1 = form.cleaned_data.get('username')
+            messages.success(request,'Account was created for' + users1)
+            return redirect('login')
+            
+
+    context = {'form': form}
+    
+    return render(request, 'signup.html',context)
+    # if request.method == 'POST':
+    #     form = user(request.POST)
+    #     if form.is_valid():
+    #         # get the value of the fields
+    #        # create internal user 
+    #         users = User.objects.create_user(
+    #             user=request.POST['username'], 
+    #             email=request.POST['email'], 
+    #             password=request.POST['password'])
+    #         Customers(
+    #             username=users,
+    #             first_name=request.POST['first_name'],
+    #             last_name=request.POST['last_name']
+    #         ).save()
+    #         return redirect('/')
+    # else:    
+        
 
 def cart(request):
 
@@ -133,3 +146,7 @@ def checkout(request):
 def processOrder(request):
     print('Data:', request.body)
     return JsonResponse('Payment complete!' , safe=False)
+
+def loginPage(request):
+    context = {}
+    return  render(request, 'login.html', context)
